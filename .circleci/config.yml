@@ -1,0 +1,36 @@
+version: 2.1
+
+# orbs:
+#   aws-s3: circleci/aws-s3@1.0.15
+#   aws-cli: circleci/aws-cli@1.2.0
+#   slack: circleci/slack@3.4.2
+
+jobs:
+  storybook:
+    docker:
+      - image: circleci/node:14.16.0
+    steps:
+      - checkout
+      - restore_cache:
+          key: &frontend_node_modules_cache_key frontend-yarn-packages-{{ checksum "0003-storybook-in-circle-ci/yarn.lock" }}
+      - run:
+          name: Build Storybook
+          command: |
+            rm -rf ./doc/dist
+            yarn build:storybook
+      - store_artifacts:
+          path: ./doc/dist
+          destination: ~/doc
+      - save_cache:
+          key: *frontend_node_modules_cache_key
+          paths:
+            - 0003-storybook-in-circle-ci/node_modules/
+
+workflows:
+  version: 2
+  build-storybook:
+    jobs:
+      - storybook:
+          filters:
+            branches:
+              only: feature/0003-storybook-in-circle-ci
