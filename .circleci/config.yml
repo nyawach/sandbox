@@ -26,11 +26,11 @@ jobs:
           name: Build Storybook
           command: |
             cd 0003-storybook-in-circle-ci
-            rm -rf ./doc/dist
+            rm -rf ./dist
             yarn build:storybook
       - store_artifacts:
-          path: ./0003-storybook-in-circle-ci/doc/dist
-          destination: ~/doc
+          path: ./0003-storybook-in-circle-ci/dist
+          destination: ~/dist
 
 workflows:
   version: 2
