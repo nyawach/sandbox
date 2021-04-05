@@ -16,10 +16,11 @@ jobs:
       - run:
           name: Build Storybook
           command: |
+            cd 0003-storybook-in-circle-ci
             rm -rf ./doc/dist
             yarn build:storybook
       - store_artifacts:
-          path: ./doc/dist
+          path: ./0003-storybook-in-circle-ci/doc/dist
           destination: ~/doc
       - save_cache:
           key: *frontend_node_modules_cache_key
