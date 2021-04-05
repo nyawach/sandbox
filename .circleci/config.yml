@@ -14,6 +14,15 @@ jobs:
       - restore_cache:
           key: &frontend_node_modules_cache_key frontend-yarn-packages-{{ checksum "0003-storybook-in-circle-ci/yarn.lock" }}
       - run:
+          name: Yarn Install
+          command: |
+            cd 0003-storybook-in-circle-ci
+            yarn install --frozen-lockfile
+      - save_cache:
+          key: *frontend_node_modules_cache_key
+          paths:
+            - 0003-storybook-in-circle-ci/node_modules/
+      - run:
           name: Build Storybook
           command: |
             cd 0003-storybook-in-circle-ci
@@ -22,10 +31,6 @@ jobs:
       - store_artifacts:
           path: ./0003-storybook-in-circle-ci/doc/dist
           destination: ~/doc
-      - save_cache:
-          key: *frontend_node_modules_cache_key
-          paths:
-            - 0003-storybook-in-circle-ci/node_modules/
 
 workflows:
   version: 2
