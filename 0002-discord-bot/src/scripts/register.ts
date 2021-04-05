@@ -1,9 +1,7 @@
 import fetch from 'node-fetch'
 import dotenv from 'dotenv'
 
-dotenv.config({
-  path: '../.env'
-})
+dotenv.config()
 
 /**
  * endpoint https://discord.com/api/v8/applications/{bot.id}/commands
