@@ -1,0 +1,23 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'NotoSansCJKjp-VF';
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+  src: url('/assets/font/NotoSansCJKjp-VF.otf');
+}
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'NotoSansCJKjp-VF';
+}
+span {
+  font-size: 10rem;
+  font-family: 'NotoSansCJKjp-VF';
+  font-variation-settings: "wght" 100, "wdth" 90, "GRAD" 1;
+  transition: font-variation-settings .3s ease-out;
+  &:hover {
+    font-variation-settings: "wght" 1000, "wdth" 900, "GRAD" 1;
+  }
+}
