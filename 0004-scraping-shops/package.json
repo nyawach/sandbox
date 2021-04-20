@@ -1,0 +1,26 @@
+{
+  "name": "ramen",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node -r tsconfig-paths/register ./src/index.ts"
+  },
+  "dependencies": {
+    "@types/node": "^13.5.1",
+    "@types/prompts": "^2.0.3",
+    "@types/puppeteer": "^2.0.0",
+    "@types/request": "^2.48.4",
+    "@types/request-promise": "^4.1.45",
+    "cac": "^6.5.6",
+    "dayjs": "^1.8.19",
+    "prompts": "^2.3.0",
+    "puppeteer": "^2.1.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5",
+    "ts-node": "^8.6.2",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {}
+}
