@@ -110,3 +110,6 @@ dist
 
 # Parcel cache directory
 .parcel-cache
+
+# Web font
+*.otf
