@@ -1,5 +1,7 @@
 <template lang="pug">
-  Tutorial
+  main
+    h1 タイトル
+    Tutorial
 </template>
 
 <script lang="ts">
@@ -13,5 +15,8 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="stylus" scoped>
+<style lang="scss">
+h1 {
+  background-color: red;
+}
 </style>
