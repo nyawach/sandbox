@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import OgpLayout from '../../components/OgpLayout'
 
 const IndexPage = () => (
