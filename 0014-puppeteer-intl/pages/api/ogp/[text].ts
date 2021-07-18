@@ -6,14 +6,14 @@ type Props = {
   text?: string
 }
 
-async function generateImage({ text }: Props) {
+async function generateImage(host: string, { text }: Props) {
 
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
 
   await page.setViewport({ width: 1200, height: 630 })
 
-  await page.goto(`http://localhost:3000/ogp/${text}`, { waitUntil: 'domcontentloaded' })
+  await page.goto(`${host}/ogp/${text}`, { waitUntil: 'domcontentloaded' })
 
   // ページ内の画像やフォントの読み込みまち
   await page.evaluate(async () => {
@@ -53,7 +53,8 @@ const handler: NextApiHandler = async (req, res) => {
   }
 
   try {
-    const image = await generateImage({ text })
+    const host = req.headers['host']
+    const image = await generateImage(host, { text })
 
     res.statusCode = 200
     res.setHeader('Content-Type', 'image/png')
