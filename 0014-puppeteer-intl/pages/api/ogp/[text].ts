@@ -13,7 +13,8 @@ async function generateImage(host: string, { text }: Props) {
 
   await page.setViewport({ width: 1200, height: 630 })
 
-  await page.goto(`${host}/ogp/${text}`, { waitUntil: 'domcontentloaded' })
+  await page.goto(`http://${host}/ogp/${text}`, { waitUntil: 'domcontentloaded' })
+  await page.waitForSelector('[data-deferred-content]')
 
   // ページ内の画像やフォントの読み込みまち
   await page.evaluate(async () => {

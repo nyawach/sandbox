@@ -8,7 +8,7 @@ type Props = {
 }
 
 const OgpLayout = ({ children, title = 'This is the default title' }: Props) => (
-  <>
+  <main>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -16,7 +16,7 @@ const OgpLayout = ({ children, title = 'This is the default title' }: Props) => 
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap.css" />
     </Head>
     <div className={styles.ogp}>{children}</div>
-  </>
+  </main>
 )
 
 export default OgpLayout

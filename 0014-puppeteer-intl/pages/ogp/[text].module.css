@@ -1,0 +1,9 @@
+.content {
+  font-feature-settings: "palt";
+  padding: 80px;
+  letter-spacing: 0.2em;
+}
+
+.word {
+  display: inline-block;
+}
