@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
-import Link from 'next/link'
 import Head from 'next/head'
+import styles from  './Ogp.module.css'
 
 type Props = {
   children?: ReactNode
@@ -13,8 +13,9 @@ const OgpLayout = ({ children, title = 'This is the default title' }: Props) => 
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap.css" />
     </Head>
-    <div>{children}</div>
+    <div className={styles.ogp}>{children}</div>
   </>
 )
 
