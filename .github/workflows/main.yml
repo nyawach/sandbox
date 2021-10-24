@@ -5,14 +5,19 @@ name: CI
 # Controls when the workflow will run
 on:
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+    paths:
+      - "0018-github-actions/**"
 
   workflow_dispatch:
 
 jobs:
   artifact:
     defaults:
-      working-directory: ./0018-github-actions
+      run:
+        shell: bash
+        working-directory: ./0018-github-actions
     runs-on: ubuntu-latest
     steps:
       - name: Get yarn cache directory path
