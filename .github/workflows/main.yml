@@ -12,7 +12,6 @@ on:
 jobs:
   artifact:
     defaults:
-      shell: bash
       working-directory: ./0018-github-actions
     runs-on: ubuntu-latest
     steps:
