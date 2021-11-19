@@ -2,12 +2,15 @@ import { useRouter } from 'next/dist/client/router'
 import { useEffect, useState } from 'react'
 import OgpLayout from '../../components/OgpLayout'
 import styles from './[text].module.css'
+import { loadDefaultJapaneseParser } from 'budoux'
 
 const IndexPage = () => {
   const router = useRouter()
   const [text, setText] = useState('')
 
   const [segments, setSegments] = useState<string[]>([])
+
+  const parser = loadDefaultJapaneseParser()
 
   useEffect(() => {
     if(!router.isReady) return
@@ -17,10 +20,8 @@ const IndexPage = () => {
   }, [router.query])
 
   useEffect(() => {
-    if(!(Intl as any).Segmenter) return
-    const segmenter = new (Intl as any).Segmenter("ja", {granularity: "word"})
-    const _segments = Array.from(segmenter.segment(text)).map((seg: any) => seg.segment)
-    setSegments(_segments)
+    const segments = parser.parse(text)
+    setSegments(segments)
   }, [text])
 
   return (
