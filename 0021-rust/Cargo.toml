@@ -6,3 +6,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+# Ref: https://zenn.dev/dozo/articles/14b76b561f3b45
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = "z"
