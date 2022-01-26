@@ -1,5 +1,6 @@
-<template>
-  <Tutorial />
+<template lang="pug">
+main
+  Tutorial
 </template>
 
 <script lang="ts">
@@ -13,3 +14,8 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style lang="stylus">
+main
+  background-color blue
+</style>
