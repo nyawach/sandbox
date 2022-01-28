@@ -13,6 +13,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
     "core-js": "^3.19.3",
     "nuxt-edge": "latest",
     "vue": "^2.6.14",
