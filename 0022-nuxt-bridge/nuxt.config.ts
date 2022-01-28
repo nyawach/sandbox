@@ -1,4 +1,6 @@
 import { defineNuxtConfig } from '@nuxt/bridge'
+import TRANSLATION_EN from './assets/translation/en.json'
+import TRANSLATION_JA from './assets/translation/ja.json'
 
 export default defineNuxtConfig({
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -26,6 +28,32 @@ export default defineNuxtConfig({
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US',
+      },
+      {
+        code: 'ja',
+        iso: 'ja_JP',
+      },
+    ],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en: TRANSLATION_EN,
+        ja: TRANSLATION_JA,
+      },
+    },
+    vuex: {
+      syncLocale: true,
+    },
+    vueI18nLoader: true,
+    strategy: 'no_prefix',
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
@@ -39,7 +67,9 @@ export default defineNuxtConfig({
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    '@nuxtjs/i18n',
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
