@@ -3,7 +3,7 @@
     <h1>{{ text }}</h1>
     <h2>
       <i18n path="Hello {world}!">
-        <template v-slot:world>
+        <template #world>
           <b>{{ $t('World') }}</b>
         </template>
       </i18n>
@@ -26,6 +26,6 @@ export default defineComponent({
       context.root.$i18n.setLocale(newLang)
     })
     return { lang }
-  }
+  },
 })
 </script>
