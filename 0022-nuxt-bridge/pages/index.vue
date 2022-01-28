@@ -1,6 +1,6 @@
 <template lang="pug">
-main
-  Tutorial
+  main
+    Tutorial
 </template>
 
 <script lang="ts">

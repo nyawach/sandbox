@@ -1,4 +1,9 @@
 {
   "semi": false,
-  "singleQuote": true
+  "arrowParens": "avoid",
+  "singleQuote": true,
+  "pugAttributeSeparator": "none",
+  "pugSingleFileComponentIndentation": true,
+  "pugWrapAttributesThreshold": 1,
+  "pugSingleQuote": false
 }

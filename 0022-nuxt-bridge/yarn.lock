@@ -1857,6 +1857,13 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
+"@prettier/plugin-pug@^1.19.2":
+  version "1.19.2"
+  resolved "https://registry.yarnpkg.com/@prettier/plugin-pug/-/plugin-pug-1.19.2.tgz#ac0d433b8decbfc8efc59498da8436fbe4b29099"
+  integrity sha512-Izo+m3pb15Ym7t3J+u22kun7bQXZOj+lAqkIc5ifxwd9En9OqcCShZz7eABORmzmY276IjSfY92Ijd23nLR68Q==
+  dependencies:
+    pug-lexer "^5.0.0"
+
 "@rollup/plugin-alias@^3.1.9":
   version "3.1.9"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-alias/-/plugin-alias-3.1.9.tgz#a5d267548fe48441f34be8323fb64d1d4a1b3fdf"
@@ -10688,7 +10695,7 @@ pug-filters@^4.0.0:
     pug-walk "^2.0.0"
     resolve "^1.15.1"
 
-pug-lexer@^5.0.1:
+pug-lexer@^5.0.0, pug-lexer@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/pug-lexer/-/pug-lexer-5.0.1.tgz#ae44628c5bef9b190b665683b288ca9024b8b0d5"
   integrity sha512-0I6C62+keXlZPZkOJeVam9aBLVP2EnbeDw3An+k0/QlqdwH6rv8284nko14Na7c0TtqtogfWXcRoFE4O4Ff20w==
@@ -12445,6 +12452,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typescript@^4.5.5:
+  version "4.5.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.5.tgz#d8c953832d28924a9e3d37c73d729c846c5896f3"
+  integrity sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==
 
 ua-parser-js@^1.0.2:
   version "1.0.2"
