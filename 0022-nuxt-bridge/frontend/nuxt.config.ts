@@ -54,6 +54,12 @@ export default defineNuxtConfig({
     strategy: 'no_prefix',
   },
 
+  apollo: {
+    clientConfigs: {
+      default: '~/plugins/apollo-client.ts',
+    },
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
@@ -67,8 +73,15 @@ export default defineNuxtConfig({
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/i18n'],
+  modules: [
+    '@nuxtjs/i18n',
+    '@nuxtjs/apollo',
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  alias: {
+    tslib: 'tslib/tslib.es6.js'
+  }
 })

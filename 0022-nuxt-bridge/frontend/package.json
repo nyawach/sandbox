@@ -1,5 +1,6 @@
 {
   "name": "demo",
+  "type": "module",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -14,9 +15,14 @@
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "@types/isomorphic-fetch": "^0.0.35",
     "apollo-cache-inmemory": "^1.6.6",
     "apollo-client": "^2.6.10",
+    "apollo-link-http": "^1.5.17",
     "core-js": "^3.19.3",
+    "graphql": "^16.3.0",
+    "graphql-tag": "^2.12.6",
+    "isomorphic-fetch": "^3.0.0",
     "nuxt-edge": "latest",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
