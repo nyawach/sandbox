@@ -70,7 +70,9 @@ export default defineNuxtConfig({
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: [
+    'nuxt-typed-vuex',
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
