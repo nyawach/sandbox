@@ -18,6 +18,9 @@ export default Vue.extend({
       query: getTest,
       result(res: object) {
         console.log(res)
+      },
+      skip() {
+        return true
       }
     }
   },
