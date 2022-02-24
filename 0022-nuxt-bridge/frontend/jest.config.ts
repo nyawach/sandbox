@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
@@ -12,8 +12,7 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: [
-    '<rootDir>/components/**/*.vue',
-    '<rootDir>/pages/**/*.vue',
+    '<rootDir>/assets/hooks/**/*.ts',
   ],
   testEnvironment: 'jsdom',
 }
