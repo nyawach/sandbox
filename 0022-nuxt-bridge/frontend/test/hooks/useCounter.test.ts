@@ -1,7 +1,14 @@
+import { createLocalVue } from '@vue/test-utils'
+import CompositionApi, { ref } from '@vue/composition-api'
 import { useCounter } from "~/assets/hooks/useCounter"
+
+const localVue = createLocalVue()
+localVue.use(CompositionApi)
 
 describe('useCounter.ts', () => {
     it('初期値を設定できる', () => {
+        const d = ref(0)
+        console.log(d.value)
         const v = 100
         const { count } = useCounter(v)
         expect(count.value).toBe(v)

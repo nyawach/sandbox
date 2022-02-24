@@ -1,8 +1,4 @@
-import { createLocalVue } from '@vue/test-utils'
-import CompositionApi, { ref, shallowReadonly } from '@vue/composition-api'
-
-const localVue = createLocalVue()
-localVue.use(CompositionApi)
+import { ref, shallowReadonly } from '@vue/composition-api'
 
 export const useCounter = (defaultValue = 0) => {
     const count = ref(defaultValue)
