@@ -6,7 +6,7 @@ export default {
   component: Tutorial,
 }
 
-const Template: Story = (args, { argTypes }) => ({
+const Template: Story = (_, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Tutorial },
   template: `

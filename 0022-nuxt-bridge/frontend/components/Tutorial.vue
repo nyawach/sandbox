@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+div.main
   h1 {{ text }}
   h2
     i18n(path="Hello {world}!")
@@ -60,3 +60,9 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="stylus">
+.main
+  margin 0 auto
+  max-width 800px
+</style>
