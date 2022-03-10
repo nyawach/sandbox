@@ -37,8 +37,16 @@ export default defineComponent({
       text.value = (evt.target as HTMLInputElement).value || ''
     }
 
-    const { increment, decrement } = context.root.$accessor
-    const currentCountText = computed(() => `${context.root.$accessor.count}回`)
+    // const { increment, decrement } = context.root.$accessor
+    // const currentCountText = computed(() => `${context.root.$accessor.count}回`)
+    const count = ref(0)
+    const currentCountText = computed(() => `${count.value}回`)
+    const increment = () => {
+      count.value = count.value + 1
+    }
+    const decrement = () => {
+      count.value = count.value - 1
+    }
     const handleClickDec = () => decrement()
     const handleClickInc = () => increment()
     return {

@@ -1,11 +1,18 @@
+const webpackConfig = require('./webpack.config')
+const { merge } = require('webpack-merge')
+
 module.exports = {
-  "stories": [
-    "../stories/**/*.stories.mdx",
-    "../stories/**/*.stories.@(js|jsx|ts|tsx)"
+  features: {
+    postcss: false,
+  },
+  stories: [
+    '../stories/**/*.stories.@(js|jsx|ts|tsx)'
   ],
-  "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials"
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-actions',
+    '@storybook/addon-controls',
   ],
-  "framework": "@storybook/vue"
+  webpackFinal: config => merge(config, webpackConfig),
 }
