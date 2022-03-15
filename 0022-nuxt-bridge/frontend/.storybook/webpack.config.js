@@ -5,19 +5,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'ts-loader',
-            options: {
-              appendTsSuffixTo: [/\.vue$/],
-              transpileOnly: true
-            }
-          }
-        ]
-      },
-      {
         test: /\.styl(us)?$/,
         use: [
           'vue-style-loader',
@@ -55,7 +42,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
-      '~': path.resolve(__dirname, '../')
+      '~': path.resolve(__dirname, '../'),
     }
   }
 }

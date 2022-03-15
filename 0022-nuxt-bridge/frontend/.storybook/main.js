@@ -1,3 +1,4 @@
+const path = require('path')
 const webpackConfig = require('./webpack.config')
 const { merge } = require('webpack-merge')
 
@@ -6,7 +7,7 @@ module.exports = {
     postcss: false,
   },
   stories: [
-    '../stories/**/*.stories.@(js|jsx|ts|tsx)'
+    '../stories/**/*.stories.ts',
   ],
   addons: [
     '@storybook/addon-links',
@@ -14,5 +15,6 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-controls',
   ],
+  framework: '@storybook/vue',
   webpackFinal: config => merge(config, webpackConfig),
 }

@@ -16,7 +16,7 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": ["@nuxt/types", "@types/node", "@nuxtjs/i18n", "vue-apollo", "~/types/*", "@types/jest", "@storybook/vue"]
+    "types": ["@nuxt/types", "@types/node", "@nuxtjs/i18n", "vue-apollo", "@types/jest", "@storybook/vue"]
   },
-  "exclude": ["node_modules", ".nuxt", "dist"]
+  "exclude": ["node_modules", ".nuxt", "dist", "coverage", ".output", "storybook-static"]
 }
