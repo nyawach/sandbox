@@ -1,3 +1,4 @@
+import { Story } from '@storybook/vue';
 import MyButton from './Button.vue';
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
@@ -15,7 +16,7 @@ export default {
 };
 
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
-const Template = (args, { argTypes }) => ({
+const Template: Story = (_, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { MyButton },
   template: '<my-button @onClick="onClick" v-bind="$props" />',

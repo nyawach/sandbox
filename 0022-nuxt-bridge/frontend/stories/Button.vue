@@ -1,13 +1,17 @@
-<template>
-  <button type="button" :class="classes" @click="onClick" :style="style">{{ label }}</button>
+<template lang="pug">
+button(
+  type="button"
+  :class="classes"
+  @click="onClick"
+  :style="style"
+) {{ label }}
 </template>
 
-<script>
-import './button.css';
+<script lang="ts">
+import './button.css'
+import { defineComponent } from '@vue/composition-api'
 
-export default {
-  name: 'my-button',
-
+export default defineComponent({
   props: {
     label: {
       type: String,
@@ -20,12 +24,10 @@ export default {
     size: {
       type: String,
       default: 'medium',
-      validator: function (value) {
-        return ['small', 'medium', 'large'].indexOf(value) !== -1;
-      },
     },
     backgroundColor: {
       type: String,
+      default: '',
     },
   },
 
@@ -36,19 +38,24 @@ export default {
         'storybook-button--primary': this.primary,
         'storybook-button--secondary': !this.primary,
         [`storybook-button--${this.size}`]: true,
-      };
+      }
     },
     style() {
       return {
         backgroundColor: this.backgroundColor,
-      };
+      }
     },
   },
 
   methods: {
     onClick() {
-      this.$emit('onClick');
+      this.$emit('onClick')
     },
   },
-};
+})
 </script>
+<style lang="stylus">
+button {
+  outline: none;
+}
+</style>
