@@ -47,9 +47,6 @@ export default defineNuxtConfig({
         ja: TRANSLATION_JA,
       },
     },
-    vuex: {
-      syncLocale: true,
-    },
     vueI18nLoader: true,
     strategy: 'no_prefix',
   },

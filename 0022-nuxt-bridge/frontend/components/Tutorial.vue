@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+div.main
   h1 {{ text }}
   h2
     i18n(path="Hello {world}!")
@@ -37,8 +37,16 @@ export default defineComponent({
       text.value = (evt.target as HTMLInputElement).value || ''
     }
 
-    const { increment, decrement } = context.root.$accessor
-    const currentCountText = computed(() => `${context.root.$accessor.count}回`)
+    // const { increment, decrement } = context.root.$accessor
+    // const currentCountText = computed(() => `${context.root.$accessor.count}回`)
+    const count = ref(0)
+    const currentCountText = computed(() => `${count.value}回`)
+    const increment = () => {
+      count.value = count.value + 1
+    }
+    const decrement = () => {
+      count.value = count.value - 1
+    }
     const handleClickDec = () => decrement()
     const handleClickInc = () => increment()
     return {
@@ -52,3 +60,9 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="stylus">
+.main
+  margin 0 auto
+  max-width 800px
+</style>
