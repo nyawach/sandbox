@@ -16,3 +16,4 @@ module.exports = {
   framework: "@storybook/vue",
   webpackFinal: config => merge(config, webpackConfig),
 }
+
