@@ -6,9 +6,9 @@ WORKDIR /web-root
 
 COPY Gemfile Gemfile.lock ./
 
-RUN gem update --system \
-    && bundle update --bundler \
-    && bundle install
+RUN gem update --system && \
+    bundle update --bundler && \
+    bundle install
 
 COPY . ./
 
