@@ -2,6 +2,12 @@ FROM ruby:3.1
 
 RUN mkdir /web-root
 
+RUN apt-get update && \
+    apt-get install -y \
+        nodejs \
+        npm \
+        yarn
+
 WORKDIR /web-root
 
 COPY Gemfile Gemfile.lock ./
