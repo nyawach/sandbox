@@ -5,7 +5,10 @@ RUN mkdir /web-root
 WORKDIR /web-root
 
 COPY Gemfile Gemfile.lock ./
-RUN bundle install
+
+RUN gem update --system \
+    && bundle update --bundler \
+    && bundle install
 
 COPY . ./
 
