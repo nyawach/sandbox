@@ -10,6 +10,7 @@ export const routes = () => (
     <Route path="/" element={<BaseLayout />}>
       <Route index element={<Index />} />
       <Route path="/about" element={<AboutIndex />} />
+      <Route path="*" element={<h1>Page Not Found</h1>} />
     </Route>
   </Routes>
 )
