@@ -8,6 +8,11 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'prettier',
   ],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   overrides: [
   ],
   parser: '@typescript-eslint/parser',
@@ -20,5 +25,6 @@ module.exports = {
     'react'
   ],
   rules: {
+    'no-console': 'warn',
   },
 }
