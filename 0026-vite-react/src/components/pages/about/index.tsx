@@ -1,4 +1,4 @@
-import About from '../../template/About'
+import About from '../../templates/About'
 
 const AboutIndex = () => <About />
 

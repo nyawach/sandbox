@@ -1,4 +1,4 @@
-import Home from '../template/Home'
+import Home from '../templates/Home'
 
 const Index = () => <Home />
 
