@@ -2,16 +2,18 @@ import { useState } from 'react'
 import reactLogo from '../../assets/images/react.svg'
 import './Home.css'
 
+console.log('hoge')
+
 function Home() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="Home">
       <div>
-        <a href="https://vitejs.dev" target="_blank">
+        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src="/assets/vite.svg" className="logo" alt="Vite logo" />
         </a>
-        <a href="https://reactjs.org" target="_blank">
+        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>

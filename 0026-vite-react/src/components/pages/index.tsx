@@ -1,7 +1,5 @@
-import Home from "../template/Home";
+import Home from '../template/Home'
 
-const Index = () => (
-    <Home />
-)
+const Index = () => <Home />
 
 export default Index
