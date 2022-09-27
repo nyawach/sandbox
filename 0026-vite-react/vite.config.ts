@@ -1,16 +1,21 @@
-import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  appType: 'spa',
+  root: './src',
+  publicDir: '../public',
+  build: {
+    outDir: '../dist',
+    emptyOutDir: true,
+  },
   server: {
     open: true,
     port: 3000,
   },
-  root: './src',
-  publicDir: '../static',
-  build: {
-    outDir: '../public',
+  plugins: [react()],
+  resolve: {
+    alias: [{ find: '~/', replacement: '/' }]
   },
 })
