@@ -1,0 +1,26 @@
+version: "3.9"
+
+volumes:
+  db:
+
+services:
+  db:
+    image: mysql/mysql-server:8.0.23
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - db:/var/lib/mysql
+    ports:
+      - "3306:3306"
+  web:
+    build:
+      context: ./application
+      dockerfile: ../container/rails/Dockerfile
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - ./application:/web-root
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
