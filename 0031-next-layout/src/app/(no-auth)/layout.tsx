@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { Header } from "../_components/Header";
+import { Header } from "@/app/_components/Header";
 
 export default function NoAuthLayout({ children }: PropsWithChildren) {
   return (
