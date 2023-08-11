@@ -1,8 +1,6 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
 import { Button } from "./components/ui/button";
+import { Calendar } from "./components/ui/calendar";
 import {
   Dialog,
   DialogContent,
@@ -13,6 +11,7 @@ import {
 } from "./components/ui/dialog";
 
 function App() {
+  const [date, setDate] = useState<Date | undefined>(new Date());
   return (
     <main>
       <Dialog>
@@ -25,6 +24,14 @@ function App() {
           <DialogFooter>フッター</DialogFooter>
         </DialogContent>
       </Dialog>
+      <div className="grid justify-center">
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          className="rounded-md border"
+        />
+      </div>
     </main>
   );
 }
