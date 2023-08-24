@@ -34,6 +34,37 @@ function App() {
         />
         <Graph />
       </div>
+      <div style={{ width: "100%", height: "80px" }}>
+        <div
+          style={{
+            display: "grid",
+            gridAutoFlow: "column",
+            gap: "20px",
+            justifyContent: "center",
+            alignItems: "stretch",
+            gridTemplateColumns: "repeat(20,30vw)",
+            height: "100%",
+            scrollSnapType: "x mandatory",
+            overflow: "auto",
+          }}
+        >
+          {Array.from(new Array(20))
+            .map((_, index) => index)
+            .map((i) => (
+              <div
+                key={i + "red"}
+                style={{
+                  backgroundColor: "red",
+                  flex: "none",
+                  scrollSnapAlign: "center",
+                  scrollSnapStop: "always",
+                }}
+              >
+                {i}
+              </div>
+            ))}
+        </div>
+      </div>
     </main>
   );
 }
