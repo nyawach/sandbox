@@ -8,6 +8,7 @@ describe("apollo-error.ts", () => {
       graphQLErrors: [new GraphQLError("テスト")],
     });
     expect(error instanceof Error).toBe(true);
+    expect(error instanceof GraphQLError).toBe(true);
     expect(error instanceof ApolloError).toBe(true);
   });
 });
