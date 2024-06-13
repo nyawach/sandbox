@@ -1,0 +1,3 @@
+[package]
+name ="deadlock"
+path = "src/main.rs"
